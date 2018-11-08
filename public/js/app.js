@@ -7,8 +7,8 @@ $(function () {
             let newInput = $('<input>');
             newButton.addClass('cart fa');
             newInput.addClass('amount');
-            newButton.addClass('btn btn-primary');
-            newInput.addClass('input-sm align-middle');
+            newButton.addClass('btn btn-danger ml-2');
+            newInput.addClass('rounded input');
 
             // Added a data-attribute
             newButton.attr('data-button', response[i].id);
@@ -17,6 +17,7 @@ $(function () {
             // Provided the initial button text
             newButton.html('&#xf07a;');
             let newTr = $('<tr>');
+            newTr.addClass('align-middle');
             newTr.appendTo('#tableMain');
             let newTh = $(`<th scope="row">${response[i].product_name}</th>`);
             newTh.appendTo('#tableMain');
@@ -30,11 +31,15 @@ $(function () {
             newTdQuantity.addClass('quantity');
             newTdQuantity.attr('data-stock', response[i].id);
             newTdQuantity.appendTo('#tableMain');
+            let newTdInput = $('<td>');
+            newTdInput.addClass('align-middle text-center');
+            newTdInput.appendTo('#tableMain');
+            
 
 
-            newInput.appendTo('#tableMain');
+            newInput.appendTo(newTdInput);
 
-            newButton.appendTo('#tableMain');
+            newButton.appendTo(newTdInput);
 
         }
     }
@@ -55,7 +60,7 @@ $(function () {
     }).then(function (response) {
         render(response);
 
-        $('#tableMain').on('hover', '.btn', function () {
+        $('.btn').hover(function () {
             $(this).toggleClass('bg-dark')
         });
         $('.amount').on('keyup', quantityError);

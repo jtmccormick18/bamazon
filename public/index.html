@@ -17,14 +17,14 @@
 </head>
 
 <body>
-        <div class="jumbotron jumbotron-fluid">
-                <div class="container text-center">
-                        <img src="./images/bamazon.jpg" height="100vh" class="rounded float-right mr-5" alt="bamazon">
-                  <h1 class="display-4">Welcome to Bamazon</h1>
-                  <p class="lead">Not quite Amazon, but fake it 'til you make it.</p>
-                </div>
-              </div>
-    <div class="container" id="bamazon"> 
+    <div class="jumbotron jumbotron-fluid bg-dark">
+        <div class="container text-center text-white">
+            <img src="./images/bamazon.jpg" height="100vh" class="rounded float-right mr-5" alt="bamazon">
+            <h1 class="display-4">Welcome to Bamazon</h1>
+            <p class="lead">Not quite Amazon, but fake it 'til you make it.</p>
+        </div>
+    </div>
+    <div class="container mb-5" id="bamazon">
         <table class="table bamTable">
             <thead class="thead-dark">
                 <tr>
@@ -32,7 +32,7 @@
                     <th scope="col">Department</th>
                     <th scope="col">Price</th>
                     <th scope="col">In Stock</th>
-                    <th scope="col">Quantity</th>
+                    <th class="text-center" scope="col">Quantity</th>
                 </tr>
             </thead>
             <tbody id="tableMain">
@@ -41,7 +41,7 @@
             </tbody>
     </div>
 </body>
-<div class="footer fixed-bottom">
+<div class="footer fixed-bottom text-center bg-dark">
     <a id="apiProd" href='api/products'>API Products</a>
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
